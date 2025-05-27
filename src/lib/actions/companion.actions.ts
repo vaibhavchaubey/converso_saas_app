@@ -2,6 +2,7 @@
 
 import { auth } from '@clerk/nextjs/server';
 import { createSupabaseClient } from '../supabase';
+import { id } from 'zod/v4/locales';
 
 export const createCompanion = async (formData: CreateCompanion) => {
   const { userId: author } = await auth();
@@ -51,4 +52,17 @@ export const getAllCompanions = async ({
   }
 
   return companions;
+};
+
+export const getCompanion = async (id: string) => {
+  const supabase = createSupabaseClient();
+  const { data, error } = await supabase
+    .from('companions')
+    .select()
+    .eq('id', id);
+
+  if (error) {
+    throw new Error(error?.message || 'Failed to get companion');
+  }
+  return data[0];
 };

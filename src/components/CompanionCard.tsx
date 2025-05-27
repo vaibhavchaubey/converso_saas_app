@@ -43,7 +43,7 @@ const CompanionCard = ({
         <p className="text-sm">{duration} mins duration</p>
       </div>
       <Link
-        href={`/companion/${id}`}
+        href={`/companions/${id}`}
         className="w-full"
         style={{ backgroundColor: color }}
       >
