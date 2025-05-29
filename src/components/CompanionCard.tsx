@@ -29,9 +29,7 @@ const CompanionCard = ({
     if (bookmarked) {
       await removeBookmark(id, pathname);
     } else {
-      console.log('START');
       await addBookmark(id, pathname);
-      console.log('END');
     }
   };
 
