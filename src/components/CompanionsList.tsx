@@ -16,7 +16,7 @@ interface CompanionListProps {
   className?: string;
 }
 
-const CompanionList = ({
+const CompanionsList = ({
   title,
   companions,
   className,
@@ -95,4 +95,4 @@ const CompanionList = ({
   );
 };
 
-export default CompanionList;
+export default CompanionsList;
